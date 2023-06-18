@@ -74,7 +74,7 @@ mongoose.connect("mongodb+srv://andekishore:Kishore-1506@cluster0.szmohag.mongod
 });*/
 //originaldbbbbb
 
-mongoose.connect("mongodb+srv://kishore:1234@cluster0.w7w19gv.mongodb.net/farmerssecondDB",{
+mongoose.connect("mongodb+srv://kishore:1234@cluster0.w7w19gv.mongodb.net/farmerstempDB",{
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(function(){
@@ -390,6 +390,7 @@ app.post("/products",function(req,res){
       res.redirect("success");
      });
 });
+
 
 
 
