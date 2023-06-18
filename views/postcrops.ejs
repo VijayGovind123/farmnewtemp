@@ -58,7 +58,10 @@
        <% if(images[i].orders.length===0) {%>
         <h1>No orders recieved Yet</h1>
      <%   } %>
-          
+     <div class="product">
+      <div class="image" style="background:url('data:image/<%=images[images[i].orders[j].i].products[images[i].orders[j].j].image.contentType%>;base64,<%=images[images[i].orders[j].i].products[images[i].orders[j].j].image.data.toString('base64')%>');background-position:center;background-size:cover;">
+
+      </div>
            <div class="details">
            
            <i style="float:right; cursor:pointer" class="material-icons" onclick="navigator.clipboard.writeText('https://farmconnects.onrender.com/products/<%=images[i].orders[j].i%>/product/<%=images[i].orders[j].j%>').then(() => { swal('Link Copied', 'Link copied to clipboard!', 'success'); }).catch((error) => { console.error('Error copying link to clipboard:', error); })">content_copy</i>
@@ -86,6 +89,7 @@
                   
 
 
+           </div>
            </div>
           
 
