@@ -86,10 +86,12 @@ mongoose.connect("mongodb+srv://kishore:1234@cluster0.w7w19gv.mongodb.net/farmer
 //mongoose.set("useCreateIndex", true);
 //mongoose.set('bufferCommands',false);
 const userSchema = new mongoose.Schema({
+  productName:String,
   name:String,
   email:String,
   mobileNum:String,
-  url:String
+  url:String,
+  quanity:Number
 });
 const User = new mongoose.model("User",userSchema);
 const productSchema = {
@@ -105,6 +107,17 @@ const productSchema = {
     price:Number,
     mobileNum:String
 };
+const orderSchema={
+  name:String,
+  farmerName:String,
+  farmerUserName:String,
+  productName:String,
+  quantityNeeded:Number,
+  MobileNum:String,
+  email:String,
+  i:String,
+  j:String
+}
 const farmerSchema = new mongoose.Schema({
     // name:String,
     // username:String,
@@ -120,7 +133,8 @@ const farmerSchema = new mongoose.Schema({
     username:String,
     password:String,
     
-    products:[productSchema]
+    products:[productSchema],
+    orders:[orderSchema]
 });
 
 farmerSchema.plugin(passportLocalMongoose);
@@ -378,7 +392,7 @@ app.get("/logout", function(req, res){
     res.redirect('/');
   });    
 });
-
+/*
 app.post("/products",function(req,res){
      const newUser = new User({
       name:req.body.name,
@@ -390,6 +404,29 @@ app.post("/products",function(req,res){
       res.redirect("success");
      });
 });
+*/
+app.post("/products",function(req,res){
+  const order = {
+    name:req.body.name,
+    farmername:req.body.farmerName,
+    farmerUserName:req.body.farmerUserName,
+    productName:req.body.productName,
+    quantity:req.body.quantity,
+    mobileNum:req.body.mobileNum,
+    email:req.body.email,
+    i:req.body.ivalue,
+    j:req.body.jvalue
+  }
+
+Farmer.findOne({username:req.body.farmerUserName}).then(function(foundUser){
+    if(foundUser){
+        foundUser.orders.push(order);
+        foundUser.save();
+        res.redirect("/success");
+    }
+});
+
+})
 
 
 

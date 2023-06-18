@@ -29,8 +29,14 @@
   </div>
   <form class="loginForm" action="/products" method="post">
       <input type="text" placeholder="Name" name="name">
+      <input type="hidden" value="<%=images[i].products[j].farmername%>" placeholder="Name" name="farmerName">
+      <input type="hidden" value="<%=images[i].username%>" placeholder="Name" name="farmerUserName">
+      <input type="hidden" value="<%=images[i].products[j].name%>" placeholder="Name" name="productName">
+      <input type="hidden" value="<%=i%>" placeholder="Name" name="ivalue">
+      <input type="hidden" value="<%=j%>" placeholder="Name" name="jvalue">
+      <input type="text" placeholder="Quantity required(in Tons)" name="quantity">
       <input type="text" placeholder="Email" name="email">
-      <input type="text" placeholder="mobileNum" name="mobileNum">
+      <input type="text" placeholder="mobile Number" name="mobileNum">
       <button type="submit">Send Details</button>
 
   </form>

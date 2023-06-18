@@ -48,6 +48,51 @@
     <%   } %>
 <%}%>
 
+<div class="container">
+  <h1 style="text-align:center; font-weight:bold; text-decoration:underline">Orders Recieved</h1>
+</div>
+
+
+<% for(let i=0;i<images.length;i++){ %>
+  <%   for(let j=0;j<images[i].orders.length;j++){ %>
+       <% if(images[i].orders.length===0) {%>
+        <h1>No orders recieved Yet</h1>
+     <%   } %>
+          <div class="product">
+           <div class="details">
+           
+           <i style="float:right; cursor:pointer" class="material-icons" onclick="navigator.clipboard.writeText('https://farmconnects.onrender.com/products/<%=images[i].orders[j].i%>/product/<%=images[i].orders[j].j%>').then(() => { swal('Link Copied', 'Link copied to clipboard!', 'success'); }).catch((error) => { console.error('Error copying link to clipboard:', error); })">content_copy</i>
+            
+           <b>Customer Name</b>
+             <h2><%=images[i].orders[j].name%></h2>
+
+
+             <b>Product Name</b>
+             <h2><%=images[i].orders[j].productName%></h2>
+
+             
+             <b>Quantity Ordered(in Tons)</b>
+
+             <h2><%=images[i].orders[j].quantity%></h2>
+
+
+
+             <b>Contact</b>
+             <h2><%=images[i].orders[j].mobileNum%></h2>
+
+             <b>Email</b>
+             <h2><%=images[i].orders[j].email%></h2>
+
+                  
+
+
+           </div>
+           </div>
+
+        
+     
+  <%   } %>
+<%}%>
 
 
 <%-include("footer")-%>
