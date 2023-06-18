@@ -112,8 +112,8 @@ const orderSchema={
   farmerName:String,
   farmerUserName:String,
   productName:String,
-  quantityNeeded:Number,
-  MobileNum:String,
+  quantity:Number,
+  mobileNum:String,
   email:String,
   i:String,
   j:String
