@@ -1,0 +1,48 @@
+<%- include("header") -%>
+
+<%   if(images[i].products[j].isExists===true) { %>
+<div class="product">
+    <div class="image" style="background:url('data:image/<%=images[i].products[j].image.contentType%>;base64,<%=images[i].products[j].image.data.toString('base64')%>');background-position:center;background-size:cover;">
+
+    </div>
+    <div class="details">
+
+      <b>Farmer Name</b>
+      <h2><%=images[i].products[j].farmername%></h2>
+
+      <b>Product Name</b>
+      <h2><%=images[i].products[j].name%></h2>
+      <b>Quantity Available</b>
+
+      <h2><%=images[i].products[j].quantity%></h2>
+
+
+
+      <b>Price(Rs/ton)</b>
+      <h2><%=images[i].products[j].price%></h2>
+      <b>Contact</b>
+      <h2><%=images[i].products[j].mobileNum%></h2>
+      
+
+    </div>
+
+  </div>
+  <form class="loginForm" action="/products" method="post">
+      <input type="text" placeholder="Name" name="name">
+      <input type="text" placeholder="Email" name="email">
+      <input type="text" placeholder="mobileNum" name="mobileNum">
+      <button type="submit">Send Details</button>
+
+  </form>
+ <% }  %>
+ 
+ <%if(images[i].products[j].isExists===false){ %>
+  <div class="container">
+    <h1>Sorry</h1><br><h1>The product you are searching is removed by the Farmer</h1>
+  </div>
+ <%  } %>
+
+
+  
+
+<%- include("footer") -%>
