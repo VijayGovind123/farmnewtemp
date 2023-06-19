@@ -80,6 +80,7 @@ nav{
   padding:10%;
   width: 100%;
   opacity:0.5;
+   backdrop-filter:blur(6px);
 
 }
 
