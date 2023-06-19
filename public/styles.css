@@ -75,12 +75,17 @@ nav{
 }
 
 .details2{
-  background-color: transparent;
+  background-image:url(black1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  background-size: cover;
   color: white;
   padding:10%;
   width: 100%;
-  opacity:0.5;
-   backdrop-filter:blur(20px);
+  
+  
 
 }
 
