@@ -75,12 +75,12 @@ nav{
 }
 
 .details2{
-  background-color: white;
-  color: black;
+  background-color: transparent;
+  color: white;
   padding:10%;
   width: 100%;
   opacity:0.5;
-   backdrop-filter:blur(6px);
+   backdrop-filter:blur(20px);
 
 }
 
