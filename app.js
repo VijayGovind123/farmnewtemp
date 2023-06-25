@@ -374,7 +374,7 @@ app.get('/search', (req, res) => {
 
       //const posts = result.flatMap(user => user.posts);
      // res.json(posts);
-    res.render("home",{images:result});
+    res.render("searchresults",{images:result,query:searchTerm});
     })
     .catch(err => {
       console.error('Failed to perform search:', err);
