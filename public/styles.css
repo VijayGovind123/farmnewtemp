@@ -90,6 +90,7 @@ nav{
 }
 
 .details b{
+  color:#B8BDB9;
   text-decoration: underline;
   text-underline-offset: 0.3em;
 }
@@ -98,6 +99,7 @@ nav{
   padding-bottom: 30px;
 }
 .details2 b{
+  color:#B8BDB9;
   text-decoration: underline;
   text-underline-offset: 0.3em;
 }
