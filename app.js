@@ -41,6 +41,9 @@ app.use(session({
     secret: "our farmers project",
     resave: false,
     saveUninitialized: false,
+    cookie: {
+       maxAge: 7 * 24 * 60 * 60 * 1000 // Set the expiration time in milliseconds (1 week in this example)
+    }
    
 }));
 
